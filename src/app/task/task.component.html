@@ -1,0 +1,37 @@
+<!-- <div >
+  <span id="taskText" class="" >{{ value }} </span>
+  <button (click)="toggleStar()">
+    <span *ngIf="isStarred">⭐</span>
+      <span *ngIf="!isStarred">☆</span>
+  </button>
+
+  <button></button>
+  <button
+    (click)="delete()"
+
+  >
+    DELETE
+  </button>
+</div> -->
+<div class="flex flex-col sm:flex-row items-center justify-between p-4 bg-white shadow-md rounded-lg max-w-md mx-auto">
+  <span class="flex items-center text-slate-600 mb-2 sm:mb-0">
+    <button (click)="toggleStar()" class="mr-2">
+      <span *ngIf="isStarred" class="text-yellow-400 text-xl">⭐</span>
+      <span *ngIf="!isStarred" class="text-gray-400 text-xl">☆</span>
+    </button>
+    <span [ngClass]="{'completed': isCompleted}" class="text-lg font-medium">
+      {{ value }}
+    </span>
+  </span>
+  <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+    <button (click)="markAsComplete()"
+            class="bg-slate-400 text-white font-bold p-2 rounded-lg border-gray-500 border-2 duration-300 hover:bg-slate-700">
+      {{ isCompleted ? 'Uncomplete' : 'Complete' }}
+    </button>
+    <button (click)="delete()"
+            class="bg-red-700 text-white font-bold py-2 px-4 rounded-lg duration-300 hover:bg-red-900">
+      Delete
+    </button>
+  </div>
+</div>
+
