@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:to-do-list": "node dist/to-do-list/server/server.mjs",
-    "predeploy": "ng build --prod --base-href /angular-to-do-list/",
+    "predeploy": "ng build --configuration production --base-href /angular-to-do-list/",
     "deploy": "gh-pages -d docs"
   },
   "private": true,
